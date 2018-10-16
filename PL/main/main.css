@@ -1,0 +1,28 @@
+body {
+	background: url(./images/bg/2.png);
+	font-family: 'Roboto', sans-serif;
+	color: #474747;
+	font-size: 14px;
+	margin: 0;
+}
+
+#header {
+	padding-left: 100%;
+	padding: 20px;
+	background: #fff;
+	border: 1px solid #fff;
+	margin-bottom: 20px;
+	border-radius: 3px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 1);
+        font: bold 11px Arial;
+}
+
+.wrapper {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+#REEF{
+    padding: 100%;
+}
