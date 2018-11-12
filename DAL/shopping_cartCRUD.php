@@ -16,15 +16,13 @@ class shopping_cartCRUD {
     
     public function Size(){
         try{
-            $size = 0;
             $db = DBconnector::Connect();
-            $query = 'SELECT * FROM shopping_cart';
-           foreach ($db->query($query)as $row){
-                    if (isset($row['id'])){
-                        $size = $size + 1;
-                    }
-                }
-                return $size;
+			
+			$result = mysql_query("SELECT count(*) as total from shopping_cart");
+			$size = mysql_fetch_assoc($result);
+			
+            return $size['total'];
+			
             } catch (Exception $ex) {
             echo $ex->getMessage();
             exit();

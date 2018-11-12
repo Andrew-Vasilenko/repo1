@@ -17,15 +17,13 @@ class categoryCRUD {
     
     public function Size(){
         try{
-            $size = 0;
             $db = DBconnector::Connect();
-            $query = 'SELECT * FROM category';
-           foreach ($db->query($query)as $row){
-                    if (isset($row['id'])){
-                        $size = $size + 1;
-                    }
-                }
-                return $size;
+			
+			$result = mysql_query("SELECT count(*) as total from category");
+			$size = mysql_fetch_assoc($result);
+			
+            return $size['total'];
+			
             } catch (Exception $ex) {
             echo $ex->getMessage();
             exit();
